@@ -23,24 +23,22 @@ class BinarySearch
 end
 ```
 
-```rb
+```bash
 Calculating -------------------------------------
-LinearSearch.each_with_index
-                         15.308k (± 4.8%) i/s   (65.32 μs/i) -     15.183k in   0.996950s
-LinearSearch.while_search
-                         24.312k (± 4.0%) i/s   (41.13 μs/i) -     24.141k in   0.995151s
- BinarySearch.search    614.769k (±34.4%) i/s    (1.63 μs/i) -    506.354k in   0.903373s
-       Array#bsearch    999.366k (± 2.3%) i/s    (1.00 μs/i) -    811.524k in   0.817148s
- Array#binary_search    632.127k (±35.0%) i/s    (1.58 μs/i) -    515.895k in   0.901586s
+ LinearSearch.search          15.338k (± 4.2%) i/s   (65.20 μs/i) -     15.221k in   0.997098s
+ LinearSearch.linear_search   24.463k (± 2.8%) i/s   (40.88 μs/i) -     24.320k in   0.995080s
+ BinarySearch.search          614.120k (±34.2%) i/s    (1.63 μs/i) -    509.488k in   0.903576s
+ BinarySearch.bsearch         823.586k (±29.0%) i/s    (1.21 μs/i) -    646.574k in   0.875338s
+ [native] Array#bsearch       999.857k (± 1.0%) i/s    (1.00 μs/i) -    814.751k in   0.815340s
 
 Comparison:
-       Array#bsearch:   999365.7 i/s
- Array#binary_search:   632126.7 i/s - 1.58x  slower
- BinarySearch.search:   614768.9 i/s - 1.63x  slower
-LinearSearch.while_search:    24311.6 i/s - 41.11x  slower
-LinearSearch.each_with_index:    15308.5 i/s - 65.28x  slower
+ [native] Array#bsearch:        999857.4 i/s
+ BinarySearch.bsearch:          823585.7 i/s - same-ish: difference falls...
+ BinarySearch.search:           614120.4 i/s - 1.63x  slower
+ LinearSearch.linear_search:    24462.8 i/s - 40.87x  slower
+ LinearSearch.search:           15338.0 i/s - 65.19x  slower
 ```
 
 So, after run my benchmark, I discover that Array#bsearch native method is so good and many fastest than my implementations.
 
-`BinarySearch.search` have a little performance than other implementations, using recursive algorithm and mid, high navigation, improve performance to search value in the tree.
+`BinarySearch.bsearch` have a little performance than other implementations, using recursive algorithm and mid, high navigation, improve performance to search value in the tree.

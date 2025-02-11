@@ -37,15 +37,15 @@ Benchmark.ips do |x|
     end
   end
 
-  x.report('Array#bsearch') do
+  x.report('BinarySearch.bsearch') do
     targeted_values.each do |value|
-      arr.bsearch { value <=> it }
+      BinarySearch.bsearch(arr, value)
     end
   end
 
-  x.report('Array#binary_search') do
+  x.report('[native] Array#bsearch') do
     targeted_values.each do |value|
-      arr.binary_search(value)
+      arr.bsearch { value <=> it }
     end
   end
 

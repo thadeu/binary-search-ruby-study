@@ -13,4 +13,23 @@ class BinarySearch
       search(arr, target_value, low, mid - 1)
     end
   end
+
+  def self.bsearch(arr, target_value)
+    low = 0
+    high = arr.size - 1
+
+    while low <= high
+      mid = (low + high) / 2
+
+      if arr[mid] == target_value
+        return mid
+      elsif target_value > arr[mid]
+        low = mid + 1
+      else
+        high = mid - 1
+      end
+    end
+
+    return 0
+  end
 end
