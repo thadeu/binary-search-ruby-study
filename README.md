@@ -41,6 +41,6 @@ LinearSearch.while_search:    24311.6 i/s - 41.11x  slower
 LinearSearch.each_with_index:    15308.5 i/s - 65.28x  slower
 ```
 
-So, after run my benchmar, I discover that Array#bsearch native method is so good and many fastest than my implementations.
+So, after run my benchmark, I discover that Array#bsearch native method is so good and many fastest than my implementations.
 
 `BinarySearch.search` have a little performance than other implementations, using recursive algorithm and mid, high navigation, improve performance to search value in the tree.
